@@ -3,6 +3,21 @@
 // Interactive JavaScript Features
 // ===================================
 
+// === EMAILJS CONFIGURATION ===
+// TODO: Replace these with your actual EmailJS credentials from https://www.emailjs.com/
+const EMAILJS_CONFIG = {
+    PUBLIC_KEY: 'Gjn0bPldrER-fshp-',      // Get from EmailJS Dashboard > Account > General
+    SERVICE_ID: 'service_v5tmx2r',      // Get from EmailJS Dashboard > Email Services
+    TEMPLATE_ID: 'template_rzbitfp'     // Get from EmailJS Dashboard > Email Templates
+};
+
+// Initialize EmailJS
+(function() {
+    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    }
+})();
+
 // === STARFIELD ANIMATION ===
 const canvas = document.getElementById('starfield');
 if (!canvas) {
@@ -29,8 +44,8 @@ if (!canvas) {
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
 
-        // Rotating galaxy swirls
-        galaxyOffset += 0.0005;
+        // Rotating galaxy swirls (slowed down to match stars)
+        galaxyOffset += 0.0002;
 
         // Multiple spiral arms
         for (let arm = 0; arm < 3; arm++) {
@@ -81,8 +96,8 @@ if (!canvas) {
             this.prevX = this.x;
             this.prevY = this.y;
 
-            // Random speed for variation
-            this.speed = 0.5 + Math.random() * 1.5;
+            // Random speed for variation (slowed down)
+            this.speed = 0.2 + Math.random() * 0.6;
 
             // Star color - white or blue-white only
             if (Math.random() < 0.6) {
@@ -314,19 +329,28 @@ contactForm.addEventListener('submit', async (e) => {
         }
     }
 
-    // Form is valid - show success message
-    // Note: In production, you would send this data to a backend API or email service
-    // For now, we'll just show a success message
-
+    // Form is valid - send via EmailJS
     try {
-        // Simulate form submission (replace with actual backend call)
-        await simulateFormSubmission({ name, email, phone, message });
+        // Check if EmailJS is configured
+        if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+            showFormMessage('EmailJS is not configured yet. Please contact via phone: +61 484 028 369', 'error');
+            return;
+        }
 
+        // Send email using EmailJS
+        const response = await emailjs.sendForm(
+            EMAILJS_CONFIG.SERVICE_ID,
+            EMAILJS_CONFIG.TEMPLATE_ID,
+            contactForm
+        );
+
+        console.log('Email sent successfully:', response);
         showFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
         contactForm.reset();
 
     } catch (error) {
-        showFormMessage('Oops! Something went wrong. Please try again or call directly.', 'error');
+        console.error('Email sending failed:', error);
+        showFormMessage('Oops! Something went wrong. Please try again or call directly at +61 484 028 369.', 'error');
     }
 });
 
@@ -340,31 +364,6 @@ function showFormMessage(message, type) {
     setTimeout(() => {
         formMessage.style.display = 'none';
     }, 5000);
-}
-
-// Simulate form submission (replace with actual backend integration)
-function simulateFormSubmission(data) {
-    return new Promise((resolve, reject) => {
-        // Simulate network delay
-        setTimeout(() => {
-            console.log('Form submitted:', data);
-
-            // In production, replace this with actual form submission:
-            // Example using fetch API:
-            // fetch('YOUR_FORM_ENDPOINT_URL', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(data)
-            // })
-            // .then(response => response.json())
-            // .then(result => resolve(result))
-            // .catch(error => reject(error));
-
-            resolve(data);
-        }, 1000);
-    });
 }
 
 // === INITIALIZE ON LOAD ===
