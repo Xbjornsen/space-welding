@@ -192,6 +192,71 @@ function showFormMessage(message, type) {
     }, 5000);
 }
 
+// === HERO SLIDESHOW ===
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const slideInterval = 5000; // 5 seconds
+let slideTimer;
+
+// Function to show specific slide
+function showSlide(index) {
+    // Ensure index is within bounds
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Add active class to current slide and dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+// Function to advance to next slide
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+// Function to start slideshow
+function startSlideshow() {
+    slideTimer = setInterval(nextSlide, slideInterval);
+}
+
+// Function to reset slideshow timer
+function resetSlideshow() {
+    clearInterval(slideTimer);
+    startSlideshow();
+}
+
+// Add click event to dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        showSlide(index);
+        resetSlideshow();
+    });
+});
+
+// Start slideshow on load
+if (slides.length > 0 && dots.length > 0) {
+    startSlideshow();
+}
+
+// Pause slideshow when user is not on the page (performance optimization)
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        clearInterval(slideTimer);
+    } else {
+        startSlideshow();
+    }
+});
+
 // === INITIALIZE ON LOAD ===
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial active nav link
