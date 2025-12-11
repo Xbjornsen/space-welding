@@ -15,6 +15,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -22,10 +25,10 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="#home" class="logo">
                 <img src="images/space-welding-logo-background.png" alt="Space Welding and Fabrication Logo" class="logo-img">
                 <span class="logo-text">Space Welding & Fabrication</span>
-            </div>
+            </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -44,9 +47,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <canvas id="starfield" class="starfield-canvas"></canvas>
         <div class="hero-content">
-            <img src="images/space-welding-logo-background.png" alt="Space Welding Logo" class="hero-logo">
             <p class="hero-subtitle">Precision Metalwork That's Out of This World</p>
             <p class="hero-tagline">Mobile Welding Services | Darwin & Rural Areas</p>
             <a href="#contact" class="cta-button">Get a Free Quote</a>
@@ -64,7 +65,7 @@
             <div class="about-content">
                 <div class="about-image">
                     <!-- REPLACE WITH REAL PHOTO OF ENDRI AT WORK (welding, wearing protective gear, professional portrait) -->
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=700&fit=crop" alt="Endri - Professional Welder">
+                    <img src="images/portrait-endri.jpg" alt="Endri - Professional Welder">
                 </div>
                 <div class="about-text">
                     <p>Hi, I'm  Endri Prifti 36 years old, a fully qualified Boilermaker with a Certification III in Engineering Fabrication Trade and over 15 years of extensive experience in the industry. Specialise in metal fabrication, aluminum and stainless steel welding, we offer maintenance and repair services tailored to meet your unique needs.
@@ -97,32 +98,32 @@ Trust Space Welding and Fabrication to bring your ideas to reality with expertis
             <p class="section-subtitle">Professional welding solutions for residential, commercial, and industrial needs</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">⚡</div>
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
                     <h3>MIG Welding</h3>
                     <p>Fast, efficient welding for steel and aluminum projects. Ideal for automotive, structural, and general fabrication work.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔥</div>
+                    <div class="service-icon"><i class="fas fa-fire"></i></div>
                     <h3>TIG Welding</h3>
                     <p>Precision welding for stainless steel, aluminum, and exotic metals. Perfect for clean, high-quality welds on critical components.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛠️</div>
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
                     <h3>Custom Fabrication</h3>
                     <p>Bring your ideas to life with custom metalwork. From concept to completion, I create bespoke solutions tailored to your needs.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
                     <h3>Repairs & Maintenance</h3>
                     <p>Quick and reliable repairs for damaged metal structures, machinery, and equipment. Get back to work faster with on-site service.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏗️</div>
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
                     <h3>Railings & Gates</h3>
                     <p>Beautiful and durable railings, gates, and fencing for residential and commercial properties. Custom designs available.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🚐</div>
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
                     <h3>Mobile Welding</h3>
                     <p>Full welding services at your location. Equipped for on-site work across Darwin and rural areas - no job too remote!</p>
                 </div>
@@ -146,9 +147,9 @@ Trust Space Welding and Fabrication to bring your ideas to reality with expertis
                 </div>
                 <div class="portfolio-item">
                     <!-- REPLACE WITH REAL PHOTO OF railings or gate installation -->
-                    <img src="images/railing-install.jpg" alt="Railing Installation">
+                    <img src="images/custom-frames.jpg" alt="Railing Installation">
                     <div class="portfolio-overlay">
-                        <h3>Decorative Railings</h3>
+                        <h3>Custom Frames</h3>
                         <p>Custom Design</p>
                     </div>
                 </div>
@@ -170,18 +171,10 @@ Trust Space Welding and Fabrication to bring your ideas to reality with expertis
                 </div>
                 <div class="portfolio-item">
                     <!-- REPLACE WITH REAL PHOTO OF repair work or before/after -->
-                    <img src="https://images.unsplash.com/photo-1603560777116-7d8d6b9aa8a7?w=600&h=600&fit=crop" alt="Repair Work">
+                    <img src="images/endri-welder.jpg" alt="Repair Work">
                     <div class="portfolio-overlay">
                         <h3>Equipment Repair</h3>
                         <p>Maintenance</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <!-- REPLACE WITH REAL PHOTO OF artistic or decorative metalwork -->
-                    <img src="https://images.unsplash.com/photo-1587828764959-d9f0c0f0c0ab?w=600&h=600&fit=crop" alt="Custom Metalwork">
-                    <div class="portfolio-overlay">
-                        <h3>Artistic Metalwork</h3>
-                        <p>Custom Design</p>
                     </div>
                 </div>
             </div>
@@ -220,21 +213,28 @@ Trust Space Welding and Fabrication to bring your ideas to reality with expertis
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div>
                             <h3>Phone</h3>
                             <a href="tel:+61484028369">+61 484 028 369</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:spacewelding1@outlook.com.au">spacewelding1@outlook.com.au</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h3>Service Area</h3>
                             <p>Darwin & Rural Areas</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">🕐</div>
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
                         <div>
                             <h3>Availability</h3>
                             <p>Mobile Service Available</p>
@@ -243,6 +243,8 @@ Trust Space Welding and Fabrication to bring your ideas to reality with expertis
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
+                    <!-- Hidden subject field for EmailJS -->
+                    <input type="hidden" name="subject" value="Contact Us: Space Welding Inquiry">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name *" required>
                     </div>

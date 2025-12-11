@@ -5,13 +5,25 @@
 
 /* === CSS VARIABLES === */
 :root {
-    /* Space Theme Colors */
+    /* Industrial Theme Colors */
     --color-space-black: #0a0a0a;
     --color-charcoal: #1a1a1a;
     --color-dark-gray: #2a2a2a;
+
+    /* Primary Accent - Flame Orange (Welding) */
+    --color-flame-orange: #ff6b35;
+    --color-flame-hover: #ff8559;
+    --color-flame-dark: #e65528;
+
+    /* Secondary Accents - Steel & Metal */
+    --color-steel-blue: #1e3a5f;
+    --color-silver: #95a5a6;
+
+    /* Legacy green kept for subtle accents */
     --color-neon-green: #00ff88;
     --color-green-glow: #00d4aa;
     --color-green-dark: #00a67e;
+
     --color-text-light: #e0e0e0;
     --color-text-white: #ffffff;
     --color-text-muted: #a0a0a0;
@@ -106,22 +118,31 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 15px;
+    cursor: pointer;
+    transition: opacity var(--transition-speed);
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo-img {
     height: 50px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
 }
 
 .logo-text {
     font-family: var(--font-heading);
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
     text-transform: uppercase;
     letter-spacing: 1px;
     display: none;
+}
+
+.logo:hover .logo-text {
+    color: var(--color-silver);
 }
 
 @media (min-width: 769px) {
@@ -154,7 +175,7 @@ a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-neon-green);
+    background: var(--color-flame-orange);
     transition: width var(--transition-speed);
 }
 
@@ -201,19 +222,22 @@ a:hover {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #0a0a0a 100%);
+    background-image: url('images/sp-logo-van.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Starfield Canvas Background */
-.starfield-canvas {
+/* Dark overlay to ensure text readability */
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
-    background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 100%);
-    pointer-events: none;
+    background: rgba(10, 10, 10, 0.6);
+    z-index: 1;
 }
 
 .hero-content {
@@ -228,12 +252,6 @@ a:hover {
     height: auto;
     margin-bottom: 30px;
     filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.6));
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
 }
 
 .hero-title {
@@ -243,21 +261,13 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--color-text-white);
-    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5),
-                 0 0 40px rgba(0, 255, 136, 0.3);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.3); }
-    to { text-shadow: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.5); }
 }
 
 .hero-subtitle {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
 }
 
 .hero-tagline {
@@ -269,14 +279,14 @@ a:hover {
 .cta-button {
     display: inline-block;
     padding: 18px 40px;
-    background: linear-gradient(135deg, var(--color-neon-green), var(--color-green-dark));
-    color: var(--color-space-black);
+    background: linear-gradient(135deg, var(--color-flame-orange), var(--color-flame-dark));
+    color: var(--color-text-white);
     font-weight: 700;
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 50px;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     transition: all var(--transition-speed);
     border: none;
     cursor: pointer;
@@ -284,8 +294,8 @@ a:hover {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 40px rgba(0, 255, 136, 0.6);
-    color: var(--color-space-black);
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+    color: var(--color-text-white);
 }
 
 .scroll-indicator {
@@ -300,6 +310,7 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 @keyframes bounce {
@@ -366,8 +377,6 @@ a:hover {
 .about-image img {
     width: 100%;
     border-radius: 10px;
-    border: 3px solid var(--color-neon-green);
-    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.2);
 }
 
 .about-text {
@@ -448,17 +457,19 @@ a:hover {
     transform: translateY(-10px);
     background: rgba(0, 255, 136, 0.08);
     border-color: var(--color-neon-green);
-    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.15);
 }
 
 .service-icon {
     font-size: 3rem;
     margin-bottom: 20px;
-    filter: grayscale(100%) brightness(1.5);
+    color: var(--color-silver);
+    transition: all var(--transition-speed);
 }
 
 .service-card:hover .service-icon {
-    filter: none;
+    color: var(--color-flame-orange);
+    transform: scale(1.1);
 }
 
 .service-card h3 {
@@ -505,7 +516,8 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 136, 0.9) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 26, 0.95) 100%);
+    border-left: 4px solid var(--color-flame-orange);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -526,12 +538,12 @@ a:hover {
 .portfolio-overlay h3 {
     font-size: 1.5rem;
     margin-bottom: 5px;
-    color: var(--color-space-black);
+    color: var(--color-text-white);
 }
 
 .portfolio-overlay p {
     font-size: 1rem;
-    color: var(--color-space-black);
+    color: var(--color-text-light);
     font-weight: 600;
 }
 
@@ -610,13 +622,13 @@ a:hover {
 
 .contact-icon {
     font-size: 2rem;
-    filter: grayscale(100%) brightness(1.5);
+    color: var(--color-flame-orange);
 }
 
 .contact-item h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
 }
 
 .contact-item p,
@@ -652,9 +664,9 @@ a:hover {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-neon-green);
-    background: rgba(0, 255, 136, 0.1);
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    border-color: var(--color-flame-orange);
+    background: rgba(255, 107, 53, 0.05);
+    box-shadow: 0 0 8px rgba(255, 107, 53, 0.15);
 }
 
 .form-group input::placeholder,
@@ -674,12 +686,12 @@ a:hover {
     border-radius: 50px;
     cursor: pointer;
     transition: all var(--transition-speed);
-    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
 }
 
 .submit-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.5);
+    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.4);
 }
 
 .form-message {
