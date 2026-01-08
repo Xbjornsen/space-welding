@@ -107,7 +107,6 @@ const observer = new IntersectionObserver((entries) => {
 const animateElements = [
     '.service-card',
     '.portfolio-item',
-    '.testimonial-card',
     '.about-content',
     '.contact-item',
     '.contact-form'

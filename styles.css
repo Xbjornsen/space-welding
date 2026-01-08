@@ -243,7 +243,7 @@ a:hover {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
@@ -650,51 +650,6 @@ a:hover {
     font-weight: 600;
 }
 
-/* === TESTIMONIALS SECTION === */
-.testimonials {
-    background: var(--color-charcoal);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.testimonial-card {
-    background: rgba(0, 255, 136, 0.05);
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    transition: all var(--transition-speed);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
-    border-color: var(--color-neon-green);
-}
-
-.stars-rating {
-    color: var(--color-neon-green);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.testimonial-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-style: italic;
-    color: var(--color-text-light);
-}
-
-.testimonial-author {
-    font-weight: 600;
-    color: var(--color-neon-green);
-}
-
 /* === CONTACT SECTION === */
 .contact {
     background: linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-space-black) 100%);
@@ -982,7 +937,7 @@ a:hover {
     /* Slideshow - Mobile optimizations */
     .slide {
         background-size: cover;
-        background-position: center;
+        background-position: top center;
     }
 
     .slideshow-dots {
@@ -1023,11 +978,6 @@ a:hover {
 
     .instagram-cta-text {
         font-size: 1rem;
-    }
-
-    /* Testimonials */
-    .testimonials-grid {
-        grid-template-columns: 1fr;
     }
 
     /* Contact */
