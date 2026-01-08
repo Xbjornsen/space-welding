@@ -97,10 +97,6 @@ Replace with your actual information.
 
 In `index.html`, find the Services section (around line 110) and edit the service cards to match your offerings.
 
-### Update Testimonials
-
-Replace the placeholder testimonials with real customer reviews in the Testimonials section (around line 210).
-
 ## 🚀 Deploy to GitHub Pages
 
 ### Step 1: Create a GitHub Repository
