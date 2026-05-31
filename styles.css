@@ -283,6 +283,8 @@ a:hover {
 
 .hero-tagline {
     font-size: clamp(1rem, 2vw, 1.3rem);
+    font-family: var(--font-body);
+    font-weight: 400;
     margin-bottom: 40px;
     color: var(--color-text-muted);
 }
