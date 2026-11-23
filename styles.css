@@ -437,7 +437,12 @@ a:hover {
 }
 
 .about-image img {
+    display: block;
     width: 100%;
+    height: auto; /* keep the photo's real proportions (the HTML width/height attrs otherwise force 1351px tall) */
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 20%; /* keep Endri's face in frame when cropped */
     border-radius: 10px;
 }
 
