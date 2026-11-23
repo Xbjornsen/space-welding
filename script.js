@@ -4,7 +4,7 @@
 // ===================================
 
 // === EMAILJS CONFIGURATION ===
-// TODO: Replace these with your actual EmailJS credentials from https://www.emailjs.com/
+// Public EmailJS identifiers (safe to expose; restrict allowed domains in the EmailJS dashboard)
 const EMAILJS_CONFIG = {
     PUBLIC_KEY: 'Gjn0bPldrER-fshp-',      // Get from EmailJS Dashboard > Account > General
     SERVICE_ID: 'service_v5tmx2r',      // Get from EmailJS Dashboard > Email Services
@@ -24,17 +24,28 @@ const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Toggle mobile menu
+function setMenuOpen(open) {
+    hamburger.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    setMenuOpen(!navMenu.classList.contains('active'));
 });
 
 // Close mobile menu when clicking a nav link
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
+    link.addEventListener('click', () => setMenuOpen(false));
+});
+
+// Close mobile menu with the Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        setMenuOpen(false);
+        hamburger.focus();
+    }
 });
 
 // === NAVBAR SCROLL EFFECT ===
@@ -68,7 +79,8 @@ function activateNavLink() {
     });
 }
 
-window.addEventListener('scroll', activateNavLink);
+// Respect the user's reduced-motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // === SMOOTH SCROLL FOR ANCHOR LINKS ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -83,7 +95,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const offsetTop = targetElement.offsetTop - 70;
             window.scrollTo({
                 top: offsetTop,
-                behavior: 'smooth'
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
         }
     });
@@ -122,9 +134,31 @@ animateElements.forEach(selector => {
 // === CONTACT FORM HANDLING ===
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
+const submitButton = contactForm.querySelector('.submit-button');
+const submitButtonText = submitButton.textContent;
+const honeypot = document.getElementById('company_website');
+let isSending = false;
+
+function setSending(sending) {
+    isSending = sending;
+    submitButton.disabled = sending;
+    submitButton.setAttribute('aria-busy', String(sending));
+    submitButton.textContent = sending ? 'Sending…' : submitButtonText;
+}
 
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Ignore repeat submits while a message is already sending
+    if (isSending) return;
+
+    // Honeypot: real visitors never see this field, so if it's filled it's a bot.
+    // Pretend it worked and send nothing.
+    if (honeypot && honeypot.value.trim() !== '') {
+        showFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+        contactForm.reset();
+        return;
+    }
 
     // Get form values
     const name = document.getElementById('name').value.trim();
@@ -163,6 +197,7 @@ contactForm.addEventListener('submit', async (e) => {
         }
 
         // Send email using EmailJS
+        setSending(true);
         const response = await emailjs.sendForm(
             EMAILJS_CONFIG.SERVICE_ID,
             EMAILJS_CONFIG.TEMPLATE_ID,
@@ -176,20 +211,40 @@ contactForm.addEventListener('submit', async (e) => {
     } catch (error) {
         console.error('Email sending failed:', error);
         showFormMessage('Oops! Something went wrong. Please try again or call directly at +61 484 028 369.', 'error');
+    } finally {
+        setSending(false);
     }
 });
 
-// Display form message
+// Display form message (stays visible until dismissed or the form is used again)
 function showFormMessage(message, type) {
-    formMessage.textContent = message;
+    formMessage.textContent = '';
     formMessage.className = `form-message ${type}`;
-    formMessage.style.display = 'block';
 
-    // Hide message after 5 seconds
-    setTimeout(() => {
-        formMessage.style.display = 'none';
-    }, 5000);
+    const text = document.createElement('span');
+    text.textContent = message;
+
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'form-message-close';
+    closeButton.setAttribute('aria-label', 'Dismiss message');
+    closeButton.textContent = '×';
+    closeButton.addEventListener('click', hideFormMessage);
+
+    formMessage.append(text, closeButton);
+    formMessage.style.display = 'block';
 }
+
+function hideFormMessage() {
+    formMessage.style.display = 'none';
+    formMessage.textContent = '';
+    formMessage.className = 'form-message';
+}
+
+// Clear an old error once the visitor starts editing the form again
+contactForm.addEventListener('input', () => {
+    if (formMessage.classList.contains('error')) hideFormMessage();
+});
 
 // === INITIALIZE ON LOAD ===
 document.addEventListener('DOMContentLoaded', () => {

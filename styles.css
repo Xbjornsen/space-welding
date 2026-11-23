@@ -191,6 +191,19 @@ a:hover {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    /* reset default <button> styles */
+    background: none;
+    border: none;
+    padding: 8px;
+    margin: -8px;
+    font: inherit;
+    color: inherit;
+    border-radius: 4px;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-flame-orange);
+    outline-offset: 2px;
 }
 
 .hamburger .bar {
@@ -708,9 +721,45 @@ a:hover {
     box-shadow: 0 6px 25px rgba(0, 255, 136, 0.4);
 }
 
+.submit-button:disabled,
+.submit-button:disabled:hover {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Visually hidden but still read by screen readers */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Honeypot spam trap: kept off-screen so people never see or tab to it */
+.hp-field {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact-form {
+    position: relative;
+}
+
 .form-message {
+    position: relative;
     text-align: center;
-    padding: 15px;
+    padding: 15px 40px;
     border-radius: 8px;
     font-weight: 600;
     display: none;
@@ -810,6 +859,20 @@ a:hover {
 
 .footer-bottom p {
     margin: 5px 0;
+}
+
+.form-message-close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
 }
 
 /* === SCROLL ANIMATIONS === */
@@ -921,5 +984,26 @@ a:hover {
     .cta-button {
         padding: 15px 30px;
         font-size: 1rem;
+    }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
     }
 }
