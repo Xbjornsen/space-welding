@@ -550,6 +550,51 @@ a:hover {
     line-height: 1.6;
 }
 
+/* === SERVICE AREAS === */
+.service-areas {
+    margin-top: 60px;
+    padding: 40px 35px;
+    background: rgba(0, 255, 136, 0.03);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    scroll-margin-top: 100px;
+    scroll-margin-bottom: 80px;
+}
+
+.service-areas-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--color-neon-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.service-areas-intro {
+    color: var(--color-text-light);
+    font-size: 1.15rem;
+    margin: 0 auto 25px;
+    max-width: 720px;
+}
+
+.service-areas-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service-areas-list li {
+    padding: 8px 16px;
+    background: rgba(0, 255, 136, 0.06);
+    border: 1px solid rgba(0, 255, 136, 0.18);
+    border-radius: 50px;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
 /* === PORTFOLIO SECTION === */
 .portfolio {
     background: linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-space-black) 100%);
@@ -1085,6 +1130,19 @@ select {
     /* Services */
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .service-areas {
+        margin-top: 40px;
+        padding: 30px 20px;
+    }
+
+    .service-areas-title {
+        font-size: 1.3rem;
+    }
+
+    .service-areas-intro {
+        font-size: 1.05rem;
     }
 
     /* Portfolio */
