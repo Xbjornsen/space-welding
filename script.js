@@ -272,3 +272,42 @@ function debounce(func, wait = 10) {
 // Apply debounce to scroll-heavy functions
 const debouncedActivateNavLink = debounce(activateNavLink, 10);
 window.addEventListener('scroll', debouncedActivateNavLink);
+
+// === PORTFOLIO LIGHTBOX ===
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+
+if (lightbox && typeof lightbox.showModal === 'function') {
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('.portfolio-overlay h3')?.textContent.trim() || '';
+        const detail = item.querySelector('.portfolio-overlay p')?.textContent.trim() || '';
+
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'button');
+        item.setAttribute('aria-label', `View larger photo: ${title}`);
+
+        const open = () => {
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = detail ? `${title} — ${detail}` : title;
+            lightbox.showModal();
+        };
+
+        item.addEventListener('click', open);
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                open();
+            }
+        });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.close());
+
+    // Close when tapping the dark backdrop (outside the photo)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.close();
+    });
+}
