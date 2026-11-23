@@ -16,14 +16,16 @@
     <meta property="og:url" content="https://spacewelding.com.au/">
     <meta property="og:title" content="Space Welding and Fabrication | Professional Mobile Welding Darwin">
     <meta property="og:description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
-    <meta property="og:image" content="https://spacewelding.com.au/images/space-welding-logo-background.png">
+    <meta property="og:image" content="https://spacewelding.com.au/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://spacewelding.com.au/">
-    <meta property="twitter:title" content="Space Welding and Fabrication | Professional Mobile Welding Darwin">
-    <meta property="twitter:description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
-    <meta property="twitter:image" content="https://spacewelding.com.au/images/space-welding-logo-background.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://spacewelding.com.au/">
+    <meta name="twitter:title" content="Space Welding and Fabrication | Professional Mobile Welding Darwin">
+    <meta name="twitter:description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
+    <meta name="twitter:image" content="https://spacewelding.com.au/images/og-image.jpg">
 
     <title>Space Welding and Fabrication | Professional Mobile Welding Darwin</title>
 
@@ -34,6 +36,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0a0a0a">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,11 +59,12 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Space Welding and Fabrication",
-      "image": "https://spacewelding.com.au/images/space-welding-logo-background.png",
+      "image": "https://spacewelding.com.au/images/og-image.jpg",
       "description": "Professional mobile welding services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, repairs, and railings.",
       "url": "https://spacewelding.com.au",
       "telephone": "+61484028369",
       "email": "info@spacewelding.com.au",
+      "taxID": "67 688 575 073",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Darwin",
@@ -194,27 +199,30 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <img src="images/space-welding-logo-background.png" alt="Space Welding and Fabrication Logo" class="logo-img">
+                <picture>
+                    <source srcset="images/logo-nav.webp" type="image/webp">
+                    <img src="images/logo-nav.png" alt="Space Welding and Fabrication Logo" class="logo-img" width="39" height="50">
+                </picture>
                 <span class="logo-text">Space Welding & Fabrication</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero-wrapper">
-        <section id="home" class="hero" style="background-image: url('images/endri-weld-alu-frame.jpg');">
+        <section id="home" class="hero" style="background-image: url('images/endri-weld-alu-frame.webp');">
             <!-- Dark overlay to ensure text readability -->
             <div class="hero-overlay"></div>
 
@@ -285,35 +293,35 @@
             <h3 class="featured-portfolio-title">Featured Work</h3>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="images/project-1.jpeg" alt="Custom metal fabrication by Space Welding Darwin" loading="lazy">
+                    <img src="images/project-1.webp" alt="Custom metal fabrication by Space Welding Darwin" width="800" height="1067" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Custom Fabrication</h3>
                         <p>Professional Welding</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/project-2.jpeg" alt="Steel fabrication work by Space Welding Darwin" loading="lazy">
+                    <img src="images/project-2.webp" alt="Steel fabrication work by Space Welding Darwin" width="800" height="747" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Steel Work</h3>
                         <p>Custom Design</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/project-3.jpeg" alt="Precision metal fabrication in Darwin NT" loading="lazy">
+                    <img src="images/project-3.webp" alt="Precision metal fabrication in Darwin NT" width="800" height="1067" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Metal Fabrication</h3>
                         <p>Precision Welding</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/project-4.jpeg" alt="Structural welding and MIG welding Darwin" loading="lazy">
+                    <img src="images/project-4.webp" alt="Structural welding and MIG welding Darwin" width="800" height="600" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Structural Work</h3>
                         <p>MIG Welding</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/project-5.jpeg" alt="TIG welding custom project by Space Welding Darwin" loading="lazy">
+                    <img src="images/project-5.webp" alt="TIG welding custom project by Space Welding Darwin" width="800" height="1162" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Custom Project</h3>
                         <p>TIG Welding</p>
@@ -329,13 +337,12 @@
             <h2 class="section-title">About Endri</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <!-- REPLACE WITH REAL PHOTO OF ENDRI AT WORK (welding, wearing protective gear, professional portrait) -->
-                    <img src="images/portrait-endri.jpg" alt="Endri - Professional Welder">
+                    <img src="images/portrait-endri.webp" alt="Endri - Professional Welder" width="900" height="1351" loading="lazy" decoding="async">
                 </div>
                 <div class="about-text">
-                    <p>Hi, I'm Endri Prifti — a fully qualified Boilermaker with a Certification III in Engineering Fabrication Trade and over 15 years of extensive experience in the industry. I specialise in metal fabrication, aluminium and stainless steel welding, and offer maintenance and repair services tailored to meet your unique needs.
-With a commitment to precision, durability, and exceptional craftsmanship, I take pride in my ability to handle projects of all sizes, delivering quality results that exceed expectations. Whether you need structural fabrication work, expert welding, routine maintenance, or urgent repair services, I am equipped to provide reliable and lasting solutions.
-Trust Space Welding and Fabrication to bring your ideas to reality with the expertise and dedication you can count on. Let me get to work for you today.</p>
+                    <p>Hi, I'm Endri Prifti — a fully qualified Boilermaker with a Certification III in Engineering Fabrication Trade and over 15 years of extensive experience in the industry. I specialise in metal fabrication, aluminium and stainless steel welding, and offer maintenance and repair services tailored to meet your unique needs.</p>
+                    <p>With a commitment to precision, durability, and exceptional craftsmanship, I take pride in my ability to handle projects of all sizes, delivering quality results that exceed expectations. Whether you need structural fabrication work, expert welding, routine maintenance, or urgent repair services, I am equipped to provide reliable and lasting solutions.</p>
+                    <p>Trust Space Welding and Fabrication to bring your ideas to reality with the expertise and dedication you can count on. Let me get to work for you today.</p>
                     <div class="credentials">
                         <div class="credential-item">
                             <div class="credential-number">15+</div>
@@ -411,20 +418,29 @@ Trust Space Welding and Fabrication to bring your ideas to reality with the expe
                 <form class="contact-form" id="contactForm">
                     <!-- Hidden subject field for EmailJS -->
                     <input type="hidden" name="subject" value="Contact Us: Space Welding Inquiry">
+                    <!-- Honeypot field: hidden from people, bots tend to fill it in -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="company_website">Leave this field empty</label>
+                        <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
+                        <label for="name" class="visually-hidden">Your name (required)</label>
                         <input type="text" id="name" name="name" placeholder="Your Name *" required>
                     </div>
                     <div class="form-group">
+                        <label for="email" class="visually-hidden">Your email (required)</label>
                         <input type="email" id="email" name="email" placeholder="Your Email *" required>
                     </div>
                     <div class="form-group">
+                        <label for="phone" class="visually-hidden">Your phone (optional)</label>
                         <input type="tel" id="phone" name="phone" placeholder="Your Phone">
                     </div>
                     <div class="form-group">
+                        <label for="message" class="visually-hidden">Project details (required)</label>
                         <textarea id="message" name="message" rows="5" placeholder="Tell me about your project *" required></textarea>
                     </div>
                     <button type="submit" class="submit-button">Send Message</button>
-                    <div class="form-message" id="formMessage"></div>
+                    <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
                 </form>
             </div>
         </div>
@@ -442,15 +458,16 @@ Trust Space Welding and Fabrication to bring your ideas to reality with the expe
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <p>Phone: <a href="tel:+61484028369">+61 484 028 369</a></p>
+                    <p>Email: <a href="mailto:info@spacewelding.com.au">info@spacewelding.com.au</a></p>
                     <p>Service Area: Darwin & Rural NT</p>
                 </div>
                 <div class="footer-section">
