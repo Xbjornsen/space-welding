@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
+    <meta name="description" content="Mobile welding and contracting in Darwin, Palmerston, Howard Springs and rural NT. 15+ years in MIG, TIG, fabrication, repairs and railings.">
     <meta name="keywords" content="welding Darwin, mobile welding, welding contractor, welding contracting Darwin, MIG welding, TIG welding, custom fabrication, metal repairs, railings Darwin">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Endri Prifti - Space Welding and Fabrication">
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://spacewelding.com.au/">
     <meta property="og:title" content="Space Welding and Fabrication | Professional Mobile Welding Darwin">
-    <meta property="og:description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
+    <meta property="og:description" content="Mobile welding and contracting in Darwin, Palmerston, Howard Springs and rural NT. 15+ years in MIG, TIG, fabrication, repairs and railings.">
     <meta property="og:image" content="https://spacewelding.com.au/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://spacewelding.com.au/">
     <meta name="twitter:title" content="Space Welding and Fabrication | Professional Mobile Welding Darwin">
-    <meta name="twitter:description" content="Space Welding and Fabrication - Professional mobile welding and contracting services in Darwin & Rural areas. 15+ years experience in MIG, TIG, custom fabrication, welding contracts, repairs, and railings.">
+    <meta name="twitter:description" content="Mobile welding and contracting in Darwin, Palmerston, Howard Springs and rural NT. 15+ years in MIG, TIG, fabrication, repairs and railings.">
     <meta name="twitter:image" content="https://spacewelding.com.au/images/og-image.jpg">
 
     <title>Space Welding and Fabrication | Professional Mobile Welding Darwin</title>
@@ -45,7 +45,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=20261123">
+    <link rel="stylesheet" href="styles.css?v=20261123-areas">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -76,15 +76,31 @@
         "latitude": "-12.4634",
         "longitude": "130.8456"
       },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "-12.4634",
-          "longitude": "130.8456"
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "-12.4634",
+            "longitude": "130.8456"
+          },
+          "geoRadius": "100000"
         },
-        "geoRadius": "100000"
-      },
+        {"@type": "City", "name": "Darwin", "address": {"@type": "PostalAddress", "addressLocality": "Darwin", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "City", "name": "Palmerston", "address": {"@type": "PostalAddress", "addressLocality": "Palmerston", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Howard Springs", "address": {"@type": "PostalAddress", "addressLocality": "Howard Springs", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Humpty Doo", "address": {"@type": "PostalAddress", "addressLocality": "Humpty Doo", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Coolalinga", "address": {"@type": "PostalAddress", "addressLocality": "Coolalinga", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Virginia", "address": {"@type": "PostalAddress", "addressLocality": "Virginia", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Berry Springs", "address": {"@type": "PostalAddress", "addressLocality": "Berry Springs", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "AdministrativeArea", "name": "Litchfield", "address": {"@type": "PostalAddress", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Batchelor", "address": {"@type": "PostalAddress", "addressLocality": "Batchelor", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Noonamah", "address": {"@type": "PostalAddress", "addressLocality": "Noonamah", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Girraween", "address": {"@type": "PostalAddress", "addressLocality": "Girraween", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Bees Creek", "address": {"@type": "PostalAddress", "addressLocality": "Bees Creek", "addressRegion": "NT", "addressCountry": "AU"}},
+        {"@type": "Place", "name": "Darwin rural area"},
+        {"@type": "Place", "name": "Top End", "address": {"@type": "PostalAddress", "addressRegion": "NT", "addressCountry": "AU"}}
+      ],
       "priceRange": "$$",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -152,7 +168,7 @@
           "name": "What areas does Space Welding service?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We service Darwin and surrounding rural areas of the Northern Territory, including remote locations. No job is too remote."
+            "text": "We provide mobile welding across Darwin, Palmerston, Howard Springs and the rural Top End, including Humpty Doo, Coolalinga, Virginia, Berry Springs, Litchfield, Batchelor, Noonamah, Girraween and Bees Creek. No job is too remote."
           }
         },
         {
@@ -277,8 +293,27 @@
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-truck"></i></div>
                     <h3>Mobile Welding</h3>
-                    <p>Full welding services at your location. Equipped for on-site work across Darwin and rural areas - no job too remote!</p>
+                    <p>Full welding services at your location. Equipped for on-site work across Darwin, Palmerston, Howard Springs and the rural area — no job too remote!</p>
                 </div>
+            </div>
+            <div class="service-areas" id="service-areas">
+                <h3 class="service-areas-title">Service Areas</h3>
+                <p class="service-areas-intro">Mobile welding across Darwin, Palmerston, Howard Springs and the rural area.</p>
+                <ul class="service-areas-list">
+                    <li>Darwin</li>
+                    <li>Palmerston</li>
+                    <li>Howard Springs</li>
+                    <li>Humpty Doo</li>
+                    <li>Coolalinga</li>
+                    <li>Virginia</li>
+                    <li>Berry Springs</li>
+                    <li>Litchfield</li>
+                    <li>Batchelor</li>
+                    <li>Noonamah</li>
+                    <li>Girraween</li>
+                    <li>Bees Creek</li>
+                    <li>Darwin rural area &amp; the Top End</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -397,7 +432,8 @@
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h3>Service Area</h3>
-                            <p>Darwin & Rural Areas</p>
+                            <p>Darwin, Palmerston, Howard Springs and the rural area</p>
+                            <p><a href="#service-areas">See all areas</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
