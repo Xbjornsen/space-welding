@@ -26,7 +26,7 @@
 
     --color-text-light: #e0e0e0;
     --color-text-white: #ffffff;
-    --color-text-muted: #a0a0a0;
+    --color-text-muted: #b8b8b8;
 
     /* Typography */
     --font-heading: 'Orbitron', sans-serif;
@@ -55,6 +55,7 @@ body {
     font-family: var(--font-body);
     background-color: var(--color-space-black);
     color: var(--color-text-light);
+    font-weight: 500;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -68,13 +69,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
     text-decoration: none;
     transition: color var(--transition-speed);
 }
 
 a:hover {
-    color: var(--color-green-glow);
+    color: var(--color-flame-hover);
 }
 
 /* === CONTAINER === */
@@ -96,13 +97,13 @@ a:hover {
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: all var(--transition-speed);
 }
 
 .navbar.scrolled {
     background: rgba(10, 10, 10, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 2px 20px rgba(255, 107, 53, 0.1);
 }
 
 .nav-container {
@@ -209,7 +210,7 @@ a:hover {
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background: var(--color-neon-green);
+    background: var(--color-text-white);
     transition: all var(--transition-speed);
     border-radius: 3px;
 }
@@ -278,7 +279,7 @@ a:hover {
     width: clamp(250px, 40vw, 450px);
     height: auto;
     margin-bottom: 30px;
-    filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.6));
+    filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.6));
 }
 
 .hero-title {
@@ -454,7 +455,7 @@ a:hover {
 .about-text .lead {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
     margin-bottom: 20px;
 }
 
@@ -472,15 +473,15 @@ a:hover {
 .credential-item {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 255, 136, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .credential-number {
     font-size: 2.5rem;
     font-weight: 900;
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
     font-family: var(--font-heading);
 }
 
@@ -492,9 +493,9 @@ a:hover {
 }
 
 .highlight {
-    background: rgba(0, 255, 136, 0.1);
+    background: rgba(255, 107, 53, 0.08);
     padding: 20px;
-    border-left: 4px solid var(--color-neon-green);
+    border-left: 4px solid var(--color-flame-orange);
     border-radius: 5px;
     font-style: italic;
 }
@@ -512,37 +513,37 @@ a:hover {
 }
 
 .service-card {
-    background: rgba(0, 255, 136, 0.03);
+    background: rgba(255, 255, 255, 0.03);
     padding: 40px 30px;
     border-radius: 15px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all var(--transition-speed);
     text-align: center;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    background: rgba(0, 255, 136, 0.08);
-    border-color: var(--color-neon-green);
-    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.15);
+    background: rgba(255, 107, 53, 0.06);
+    border-color: var(--color-flame-orange);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.15);
 }
 
 .service-icon {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--color-silver);
+    color: var(--color-flame-orange);
     transition: all var(--transition-speed);
 }
 
 .service-card:hover .service-icon {
-    color: var(--color-flame-orange);
+    color: var(--color-flame-hover);
     transform: scale(1.1);
 }
 
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
 }
 
 .service-card p {
@@ -554,8 +555,8 @@ a:hover {
 .service-areas {
     margin-top: 60px;
     padding: 40px 35px;
-    background: rgba(0, 255, 136, 0.03);
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 15px;
     text-align: center;
     scroll-margin-top: 100px;
@@ -565,7 +566,7 @@ a:hover {
 .service-areas-title {
     font-size: 1.5rem;
     margin-bottom: 12px;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -587,8 +588,8 @@ a:hover {
 
 .service-areas-list li {
     padding: 8px 16px;
-    background: rgba(0, 255, 136, 0.06);
-    border: 1px solid rgba(0, 255, 136, 0.18);
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.3);
     border-radius: 50px;
     color: var(--color-text-light);
     font-size: 1rem;
@@ -605,8 +606,8 @@ a:hover {
     text-align: center;
     margin: 40px 0 0;
     padding: 40px;
-    background: rgba(0, 255, 136, 0.05);
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 15px;
 }
 
@@ -803,9 +804,9 @@ a:hover {
     align-items: flex-start;
     gap: 20px;
     padding: 25px;
-    background: rgba(0, 255, 136, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .contact-icon {
@@ -838,19 +839,19 @@ a:hover {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(0, 255, 136, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
     font-size: 1.2rem;
     transition: all var(--transition-speed);
 }
 
 .social-links a:hover {
-    background: var(--color-neon-green);
+    background: var(--color-flame-orange);
     color: var(--color-space-black);
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 /* Contact Form */
@@ -868,8 +869,8 @@ a:hover {
 .form-group input,
 .form-group textarea {
     padding: 15px 20px;
-    background: rgba(0, 255, 136, 0.05);
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
     color: var(--color-text-light);
     font-family: var(--font-body);
@@ -980,7 +981,7 @@ select {
 /* === FOOTER === */
 .footer {
     background: var(--color-space-black);
-    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 60px 20px 20px;
     position: relative;
     z-index: 1;
@@ -996,7 +997,7 @@ select {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: var(--color-neon-green);
+    color: var(--color-text-white);
 }
 
 .footer-section p {
@@ -1018,7 +1019,7 @@ select {
 }
 
 .footer-links a:hover {
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
 }
 
 .footer-social-links {
@@ -1033,25 +1034,25 @@ select {
     justify-content: center;
     width: 45px;
     height: 45px;
-    background: rgba(0, 255, 136, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
-    color: var(--color-neon-green);
+    color: var(--color-flame-orange);
     font-size: 1.4rem;
     transition: all var(--transition-speed);
 }
 
 .footer-social-links a:hover {
-    background: var(--color-neon-green);
+    background: var(--color-flame-orange);
     color: var(--color-space-black);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(0, 255, 136, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     color: var(--color-text-muted);
 }
 
@@ -1140,7 +1141,7 @@ select {
         text-align: center;
         transition: left 0.3s;
         padding: 30px 0;
-        border-top: 1px solid rgba(0, 255, 136, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .nav-menu.active {
@@ -1277,8 +1278,8 @@ select {
     .contact-info {
         gap: 0;
         padding: 4px 0;
-        background: rgba(0, 255, 136, 0.05);
-        border: 1px solid rgba(0, 255, 136, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 10px;
     }
 
@@ -1359,5 +1360,57 @@ select {
     .fade-in {
         opacity: 1;
         transform: none;
+    }
+}
+
+/* In-page links inside contact details (e.g. "See all areas") should look tappable */
+.contact-item a[href^="#"] {
+    color: var(--color-flame-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* === KEYBOARD FOCUS === */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--color-flame-orange);
+    outline-offset: 3px;
+}
+
+/* === TOUCH SCREENS: no hover lift/zoom (taps would leave cards stuck "hovered") === */
+@media (hover: none) {
+    .service-card:hover,
+    .cta-button:hover,
+    .submit-button:hover,
+    .visit-instagram-btn:hover,
+    .social-links a:hover,
+    .footer-social-links a:hover {
+        transform: none;
+    }
+
+    .service-card:hover .service-icon {
+        transform: none;
+    }
+
+    .portfolio-item:hover img {
+        transform: none;
+    }
+}
+
+/* === SMALL PHONES: keep the brand name on one line === */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: clamp(0.62rem, 3.1vw, 0.8rem);
+        letter-spacing: 0;
+        white-space: nowrap;
     }
 }
