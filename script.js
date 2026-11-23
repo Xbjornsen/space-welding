@@ -40,6 +40,15 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => setMenuOpen(false));
 });
 
+// Close mobile menu when tapping anywhere outside it
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+        setMenuOpen(false);
+    }
+});
+
 // Close mobile menu with the Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
